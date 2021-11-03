@@ -8,6 +8,12 @@ namespace ArrayOperations
 {
     class ArrayManager
     {
+        /// <summary>
+        /// Create matrix with given dimensions
+        /// </summary>
+        /// <param name="row">Number of rows</param>
+        /// <param name="column">Number of columns</param>
+        /// <returns></returns>
         public int[,] Create(int row, int column)
         {
             int[,] result = new int[row, column];
@@ -22,6 +28,11 @@ namespace ArrayOperations
             return result;
         }
 
+        /// <summary>
+        /// Create array with given dimension
+        /// </summary>
+        /// <param name="n">Number of elements</param>
+        /// <returns></returns>
         public int[] Create(int n)
         {
             int[] result = new int[n];
@@ -34,7 +45,11 @@ namespace ArrayOperations
         }
 
 
-
+        /// <summary>
+        /// Get maximum element
+        /// </summary>
+        /// <param name="arr">Given matrix</param>
+        /// <returns></returns>
         public int GetMax(int[,] arr)
         {
             int max = arr[0, 0];
@@ -50,7 +65,11 @@ namespace ArrayOperations
             }
             return max;
         }
-
+        /// <summary>
+        /// Get minimum element
+        /// </summary>
+        /// <param name="arr">Given array</param>
+        /// <returns></returns>
         public int GetMin(int[] arr)
         {
             int min = arr[0];
@@ -64,6 +83,11 @@ namespace ArrayOperations
             return min;
         }
 
+        /// <summary>
+        /// Get minimum element
+        /// </summary>
+        /// <param name="arr">Given matrix</param>
+        /// <returns></returns>
         public int GetMin(int[,] arr)
         {
             int min = arr[0, 0];
@@ -80,6 +104,11 @@ namespace ArrayOperations
             return min;
         }
 
+        /// <summary>
+        /// Get maximium element
+        /// </summary>
+        /// <param name="arr">Given array</param>
+        /// <returns></returns>
         public int GetMax(int[] arr)
         {
             int max = arr[0];
@@ -93,6 +122,10 @@ namespace ArrayOperations
             return max;
         }
 
+        /// <summary>
+        /// Swap maximum and minimum elemnts
+        /// </summary>
+        /// <param name="arr">Given array</param>
         public void Swap(int[] arr)
         {
             int min = arr[0];
@@ -120,6 +153,10 @@ namespace ArrayOperations
             arr[maxIndex] = temp;
         }
 
+        /// <summary>
+        /// Swap maximum and minimum elemnts 
+        /// </summary>
+        /// <param name="arr">Given matrix</param>
         public void Swap(int[,] arr)
         {
             int max = arr[0, 0];
@@ -148,6 +185,26 @@ namespace ArrayOperations
                 int temp = arr[indexMin.Item1, indexMin.Item2];
                 arr[indexMin.Item1, indexMin.Item2] = arr[indexMax.Item1, indexMax.Item2];
                 arr[indexMax.Item1, indexMax.Item2] = temp;
+        }
+
+        /// <summary>
+        /// Get diagonal of given square matrix
+        /// </summary>
+        /// <param name="arr">Given matrix</param>
+        /// <returns></returns>
+        public int[] GetDiagonal(int[,] arr)
+        {
+            if (arr.GetLength(0) != arr.GetLength(1))
+            {
+                return null;
+            }
+
+            int[] result = new int[arr.GetLength(0)];
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                result[i] = arr[i, i];
+            }
+            return result;
         }
     }
 }

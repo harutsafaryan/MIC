@@ -8,6 +8,10 @@ namespace ArrayOperations
 {
     class PrinterManager
     {
+        /// <summary>
+        /// Print given array
+        /// </summary>
+        /// <param name="arr">Given matrix</param>
         public void Print(int[,] arr)
         {
             for (int i = 0; i < arr.GetLength(0); i++)
@@ -20,6 +24,10 @@ namespace ArrayOperations
             }
         }
 
+        /// <summary>
+        /// Print given matrix
+        /// </summary>
+        /// <param name="arr">Given array</param>
         public void Print(int[] arr)
         {
             for (int i = 0; i < arr.Length; i++)
